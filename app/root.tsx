@@ -27,7 +27,12 @@ export default () => (
       <Scripts />
       <LiveReload />
       <footer>
-        Back <Link to="/">home</Link>
+        <p>
+          Back <Link to="/">home</Link>
+        </p>
+        <p>
+          Secret <Link to="/admin">admin</Link> page
+        </p>
       </footer>
     </body>
   </html>

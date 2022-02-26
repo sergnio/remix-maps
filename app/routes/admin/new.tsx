@@ -31,7 +31,7 @@ export const action: ActionFunction = async ({ request }) => {
 
   await createPost({ title, slug, markdown });
 
-  return redirect("/admin");
+  return redirect(`/posts/${slug}`);
 };
 
 export default function NewPost() {
