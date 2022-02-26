@@ -1,6 +1,6 @@
 import { Outlet, Link, useLoaderData } from "remix";
-import { getPosts } from "~/api/posts";
-import type { Post } from "~/api/posts";
+import { getPosts } from "~/api/post";
+import type { Post } from "~/api/post";
 import adminStyles from "~/styles/admin.css";
 
 export const links = () => {
