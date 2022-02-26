@@ -9,11 +9,6 @@ export const loader: LoaderFunction = async ({ params: { slug } }) => {
 };
 
 export default () => {
-  const { slug, title } = useLoaderData<Post>();
-
-  return (
-    <section>
-      <h1>Slug: {title}</h1>
-    </section>
-  );
+  const { html } = useLoaderData<Post>();
+  return <section dangerouslySetInnerHTML={{ __html: html }} />;
 };
