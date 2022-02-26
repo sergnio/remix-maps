@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "remix";
-import getPosts, { Post } from "~/api/posts";
+import { Post, getPosts } from "~/api/posts";
 
 export const loader = async (): Promise<Post[]> => getPosts();
 

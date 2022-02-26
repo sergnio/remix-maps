@@ -30,22 +30,24 @@ export const getPost = async (slug: string) => {
   return { slug, title: attributes.title, html };
 };
 
-export default async () => {
+export const getPosts = async () => {
   const dir = await fs.readdir(postsPath);
   return Promise.all(
     dir.map(async (filename) => {
       const file = await fs.readFile(path.join(postsPath, filename));
 
-      const { attributes } = parseFrontMatter(file.toString());
+      const { attributes, body } = parseFrontMatter(file.toString());
 
       invariant(
         isValidPostAttributes(attributes),
         `${filename} has bad meta data!`
       );
+      const html = marked(body);
 
       return {
         slug: filename.replace(/\.md$/, ""),
         title: attributes.title,
+        html,
       };
     })
   );
