@@ -9,7 +9,7 @@ export default function Posts() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Posts page</h1>
-      <Link to="/">Routes</Link>
+      <Link to="/">Home</Link>
       <ul>
         {posts.map(({ slug, title }) => (
           <li key={slug}>
