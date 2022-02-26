@@ -16,6 +16,17 @@ const isValidPostAttributes = (
   attributes: any
 ): attributes is PostMarkdownAttributes => attributes?.title;
 
+export const getPost = async (slug: string) => {
+  const filepath = path.join(postsPath, slug + ".md");
+  const file = await fs.readFile(filepath);
+  const { attributes } = parseFrontMatter(file.toString());
+  invariant(
+    isValidPostAttributes(attributes),
+    `Post ${filepath} is missing attributes`
+  );
+  return { slug, title: attributes.title };
+};
+
 export default async () => {
   const dir = await fs.readdir(postsPath);
   return Promise.all(
