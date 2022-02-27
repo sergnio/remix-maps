@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import adminStyles from "~/styles/admin.css";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -27,12 +28,17 @@ export default () => (
       <Scripts />
       <LiveReload />
       <footer>
-        <p>
-          Back <Link to="/">home</Link>
-        </p>
-        <p>
-          Secret <Link to="/admin">admin</Link> page
-        </p>
+        <ul>
+          <li>
+            Back <Link to="/">home</Link>
+          </li>
+          <li>
+            Secret <Link to="/admin">admin</Link> page
+          </li>
+          <li>
+            <Link to="/map">Maps</Link> page
+          </li>
+        </ul>
       </footer>
     </body>
   </html>

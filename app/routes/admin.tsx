@@ -6,6 +6,7 @@ import adminStyles from "~/styles/admin.css";
 export const links = () => {
   return [{ rel: "stylesheet", href: adminStyles }];
 };
+
 export const loader = async () => {
   return getPosts();
 };
