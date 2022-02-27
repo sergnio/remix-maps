@@ -1,8 +1,9 @@
 /**
  * @type {import('@remix-run/dev').AppConfig}
  */
+// @ts-ignore
 module.exports = {
-  ignoredRouteFiles: [".*"]
+  ignoredRouteFiles: [".*"],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
